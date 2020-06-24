@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+        <record id="bank_statement_js_form_inherit" model="ir.ui.view">
+            <field name="name">bank.statement.js.form.inherit</field>
+            <field name="model">account.bank.statement</field>
+            <field name="inherit_id" ref="account.view_bank_statement_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='bank_account_id']" position="after">
+                    <field name="account_id" attrs="{'readonly' : [('journal_entry_ids', '!=', [])] }"/>
+                    <button name="create_jurnal" confirm="Apakah anda yakin?" attrs="{'invisible': ['|',('journal_entry_ids', '!=', []), ('state', '=', 'confirm')]}" string="Posting" type="object" icon="fa fa-paper-plane-o text-warning"/>
+                    <button name="button_print" attrs="{'invisible': ['|',('journal_entry_ids', '=', []), ('state', '=', 'confirm')]}" string="Print" type="object" icon="fa fa-print text-warning"/>
+
+                </xpath>
+            </field>
+        </record>
+</odoo>
