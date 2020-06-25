@@ -10,7 +10,7 @@
     'sequence': 11,
     'maintainer': 'Tarkiz',
     'website': '',
-    'images': ['static/description/tarkiz.png'],
+    'images': ['static/description/tarkiz_image.png'],
     'depends': ['account','account_cancel','vit_journal_voucher'],
     'data': ['views/cash_view.xml',
              ],
